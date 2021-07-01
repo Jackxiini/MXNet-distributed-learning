@@ -258,7 +258,7 @@ $ python /home/xwj/test/launch.py -n 2 -s 2 -H hosts --sync-dst-dir /home/xwj/di
 ```
 
 #### 另一种方式
-我们也可以将环境变量写在程序中，手动启动分布式任务。其中`PS_VERBOSE=2`为调试模式，开启后在控制台会打印各节点交互的 Log。
+我们也可以将环境变量写在程序中，手动启动分布式任务。
 
 ```python
 import os
@@ -272,4 +272,6 @@ os.environ.update({
   "PS_VERBOSE": "2"
 })
 ```
+其中`PS_VERBOSE=2`为调试模式，开启后在控制台会打印各节点交互的 Log。
+
 我们需要将环境变量更新代码写在脚本头部，启动时先启动 scheduler 脚本再启动其他脚本。
