@@ -256,3 +256,20 @@ $ python /home/xwj/test/launch.py -n 2 -s 2 -H hosts --sync-dst-dir /home/xwj/di
 [Epoch 5] Training: accuracy=0.110440
 [Epoch 5] Validation: accuracy=0.113500
 ```
+
+#### 另一种方式
+我们也可以将环境变量写在程序中，手动启动分布式任务。其中`PS_VERBOSE=2`为调试模式，开启后在控制台会打印各节点交互的 Log。
+
+```python
+import os
+
+os.environ.update({
+  "DMLC_ROLE": "worker",
+  "DMLC_PS_ROOT_URI": "10.157.6.183",
+  "DMLC_PS_ROOT_PORT": "8000",
+  "DMLC_NUM_SERVER": "1",
+  "DMLC_NUM_WORKER": "2",
+  "PS_VERBOSE": "2"
+})
+```
+我们需要将环境变量更新代码写在脚本头部，启动时先启动 scheduler 脚本再启动其他脚本。
