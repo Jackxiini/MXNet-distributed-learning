@@ -239,7 +239,7 @@ python /home/xwj/test/launch.py -n 2 -s 2 -H hosts \
 ```
 
 最后运行命令，我们会看到以下的输出：
-```
+```css
 $ python /home/xwj/test/launch.py -n 2 -s 2 -H hosts --sync-dst-dir /home/xwj/dist --launcher ssh "python /home/xwj/test/cifar10.py"
 2021-01-13 17:25:12,438 INFO rsync /home/xwj/test/ -> 10.157.6.183:/home/xwj/dist
 2021-01-13 17:25:12,438 INFO rsync /home/xwj/test/ -> 10.157.6.182:/home/xwj/dist
