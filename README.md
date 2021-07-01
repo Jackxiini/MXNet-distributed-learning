@@ -113,7 +113,7 @@ trainer = gluon.Trainer(net.collect_params(),
 
 注意: 我们不是根据GPU的数量来拆分数据，而是根据worker的数量来拆分数据。
 
-![图片](http://bos.bj.bce-internal.sdns.baidu.com/agroup-bos-bj/bj-d63ad1c12c44a3ac0c8f94600bd470ccccc6b733)
+![bj-d63ad1c12c44a3ac0c8f94600bd470ccccc6b733](https://user-images.githubusercontent.com/35672492/124058750-8f3e4000-da5c-11eb-9132-42347c539724.png)
 
 每个worker可以知道集群中worker的总数，每个worker有一个rank号，取值范围是0到N-1，N是worker总数。
 
